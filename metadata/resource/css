@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "css",
+        "url": "app/resources/TemplateMetro.css"
+    },
+    "designerId": "43f320f6-fd5f-48a0-b582-023ca06d80f0"
+}

@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js6",
+        "url": "../W8Preloader.js"
+    },
+    "designerId": "8b162f8a-6cec-4732-a19c-1ce4035896cf"
+}

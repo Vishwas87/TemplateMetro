@@ -1,0 +1,14 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js3",
+        "id": "PouchDBJS",
+        "url": "../pouchdb.js"
+    },
+    "designerId": "46aeaa46-7952-481a-96fa-bce9591ee1c9"
+}

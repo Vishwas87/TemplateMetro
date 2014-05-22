@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TemplateStr_RunningWidget",
+        "model": "TemplateMdl_App",
+        "storeId": "TemplateStr_RunningWidget"
+    },
+    "designerId": "d885e4ee-fe6e-4f77-95f7-0228b1dd55b4",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "TemplateStr_RunningWidget_isNotRunning",
+                "implHandler": [
+                    "if(record && record.get)",
+                    "{",
+                    "    var app_id = record.get(\"app_id\");",
+                    "    var multirunning = record.get(\"multirunning\");",
+                    "    var found = this.find(\"app_id\",app_id);",
+                    "    return (found===-1 || (found !== -1 && multirunning));",
+                    "}",
+                    "return false;",
+                    ""
+                ]
+            },
+            "designerId": "84c6392f-f67d-40c6-b402-e50c433af3a6"
+        }
+    ]
+}

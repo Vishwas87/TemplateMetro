@@ -1,0 +1,151 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TemplateMdl_App",
+        "idProperty": "_id",
+        "mixins": [
+            "{",
+            "    persistence: 'cloudLibrary.model.Persistent'",
+            "}"
+        ]
+    },
+    "designerId": "37a029a6-87fc-411f-88cc-f7d6f551389e",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "designerId": "3905bf92-c13b-482a-8903-e7c71c70a913"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "_rev"
+            },
+            "designerId": "68026e60-33e4-4ee1-8a1b-ac0446b41156"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "app_id"
+            },
+            "designerId": "055f2fd3-a680-4fb4-883b-f848215151b7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cls"
+            },
+            "designerId": "19ee20c3-55e1-4fe5-a51d-71b24f2b40f4"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "icon"
+            },
+            "designerId": "6dc0f774-c8c2-4113-8fe3-e30a7d057411"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "application_config"
+            },
+            "designerId": "6206972f-ca73-4097-8b06-085a256a67cc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "config"
+            },
+            "designerId": "fcde9485-7f23-4db7-bda4-667260b91dbe"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "true\t"
+                ],
+                "name": "multirunning",
+                "type": "boolean"
+            },
+            "designerId": "9522e146-99a6-436f-b51b-2daf60bab89a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "type"
+            },
+            "designerId": "32d03983-9bcc-434b-b14c-50b7724bdeeb"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processTemplateMdl_App",
+                "implHandler": [
+                    "this.configureModel(config);",
+                    ""
+                ]
+            },
+            "designerId": "bd7f82e0-babe-4cc5-b355-f26c49c89ec2"
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TemplateCnt_tpl",
+        "mixins": [
+            "{",
+            "    mix:\"MetroMixin.controller.TemplateCnt_tpl\"",
+            "    ",
+            "}"
+        ],
+        "models": [
+            "TemplateMdl_App",
+            "TemplateMdl_AppPreference"
+        ],
+        "stores": [
+            "TemplateStr_RunningWidget",
+            "TemplateStr_Apps",
+            "TemplateStr_AppPreferences"
+        ]
+    },
+    "designerId": "4fd4a19a-f343-43b0-83a6-1e3f2fc2249f",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "tplCnt_initialize"
+            },
+            "designerId": "8d4afbbc-bdb9-494c-8fb5-114acb61450d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "tplCnt_deInitialize"
+            },
+            "designerId": "9b29ed05-c5e0-4431-bfd2-963575ded024"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "tplCnt_dismiss"
+            },
+            "designerId": "52e73195-b2ba-4d67-bab2-14b6a4ac6113"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "tplCnt_getCountRunningWdg"
+            },
+            "designerId": "7d7c10ad-20b2-49fe-9e9f-62b06ed593a5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "tplCnt_getCountAvailableWdg"
+            },
+            "designerId": "ff6b0d02-9369-4c6f-ba71-cebd3ec21573"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onLaunch",
+                "implHandler": [
+                    "",
+                    "Ext.create('TemplateMetro.view.AppWindow_tpl', {renderTo: Ext.getBody()}).show();"
+                ]
+            },
+            "designerId": "4b20a55e-7db9-40ee-a167-0920eb701201"
+        }
+    ]
+}

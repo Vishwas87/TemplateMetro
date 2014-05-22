@@ -1,0 +1,62 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "TemplateMdl_AppPreference",
+        "idProperty": "_id",
+        "mixins": [
+            "{",
+            "        persistence: 'cloudLibrary.model.Persistent'",
+            "}"
+        ]
+    },
+    "designerId": "4d07e636-98cd-4862-8454-cecc03eb5655",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "app_id"
+            },
+            "designerId": "c591d7b5-fa7b-4f7e-a29c-163516eb1327"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "preferences"
+            },
+            "designerId": "0852df1e-1546-4889-8ce7-8344d85a3d04"
+        },
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processTemplateMdl_AppPreference",
+                "implHandler": [
+                    "this.configureModel(config);"
+                ]
+            },
+            "designerId": "f1b55db1-bf47-4689-be33-dc2b92feb7f9"
+        }
+    ]
+}

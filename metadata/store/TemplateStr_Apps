@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "configuration": [
+            "{",
+            "    localDB: 'siacloud_apps_list',",
+            "    useIndex: false,",
+            "    remote: false,",
+            "    source: '',",
+            "    target: '',",
+            "    complete: function(){ //Funzione chiamata al completamento della sync",
+            "    },",
+            "    onComplete: function(info){ //Funzione chiamata ad ogni sync",
+            "    },",
+            "    scope: this,",
+            "    live: false",
+            "    ",
+            "}"
+        ],
+        "designer|userClassName": "TemplateStr_Apps",
+        "mixins": [
+            "{",
+            "    persistence: 'cloudLibrary.store.LocalStore'",
+            "}"
+        ],
+        "model": "TemplateMdl_App",
+        "storeId": "TemplateStr_Apps"
+    },
+    "configAlternates": {
+        "configuration": "object"
+    },
+    "designerId": "6d7eda59-0afc-4f04-8cc9-7936067e531c",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "configuration",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processTemplateStr_Apps",
+                "implHandler": [
+                    "Ext.apply(config,this.configure(config));",
+                    "return config;"
+                ]
+            },
+            "designerId": "25a8d0c3-c0fa-4fe6-a745-a5ad728c2ed6"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "filterFN",
+                    "field",
+                    "scope"
+                ],
+                "fn": "TemplateStr_Apps_CustomFilter",
+                "implHandler": [
+                    "if(typeof filterFN === 'function' && scope && field)",
+                    "{",
+                    "    this.filterBy(function(record){",
+                    "        var b = filterFN.call(scope,record);",
+                    "        if(Ext.isBoolean(b)) return b;",
+                    "        else return false; //If the function doesn't return a boolean value return false",
+                    "    });",
+                    "}"
+                ]
+            },
+            "designerId": "ac4e0a50-1d28-447d-8284-c3d6fd11b1d2"
+        }
+    ]
+}

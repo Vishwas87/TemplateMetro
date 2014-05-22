@@ -1,0 +1,66 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "configuration": [
+            "{",
+            "    localDB: 'siacloud_apps_preferences',",
+            "    useIndex: false,",
+            "    remote: false,",
+            "    source: '',",
+            "    target: '',",
+            "    complete: function(){ //Funzione chiamata al completamento della sync",
+            "        ",
+            "    },",
+            "    onComplete: function(info){ //Funzione chiamata ad ogni sync",
+            "    },",
+            "    scope: this,",
+            "    live: false",
+            "}"
+        ],
+        "designer|userClassName": "TemplateStr_AppPreferences",
+        "mixins": [
+            "{",
+            "    persistence: 'cloudLibrary.store.LocalStore'",
+            "}"
+        ],
+        "model": "TemplateMdl_AppPreference",
+        "storeId": "TemplateStr_AppPreferences"
+    },
+    "configAlternates": {
+        "configuration": "object"
+    },
+    "designerId": "54d275a8-6c49-4307-8f09-4ed9c0eb0cce",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "configuration",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "processcfgfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "config"
+                ],
+                "fn": "processTemplateStr_AppPreferences",
+                "implHandler": [
+                    "Ext.apply(config,this.configure(config));",
+                    "return config;\t"
+                ]
+            },
+            "designerId": "4b95f376-b419-4f3e-88e7-4e08182b0655"
+        }
+    ]
+}

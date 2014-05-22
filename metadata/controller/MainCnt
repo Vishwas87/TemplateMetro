@@ -1,0 +1,72 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainCnt"
+    },
+    "designerId": "cf26efa6-bf45-45ae-8848-071010c10180",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback",
+                    "parameters",
+                    "scope"
+                ],
+                "fn": "mainCnt_onInit",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "ad00ff55-6026-4dce-a69e-f176bdfa5cfd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "application"
+                ],
+                "fn": "mainCnt_onStart",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "5168e43b-f670-451f-a736-ba55f8722e43"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callback",
+                    "parameters",
+                    "scope"
+                ],
+                "fn": "mainCnt_onClose",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "designerId": "4a984f0c-1cbd-4c8d-af0c-7ff3c1ecf9bc"
+        }
+    ]
+}

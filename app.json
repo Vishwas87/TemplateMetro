@@ -1,0 +1,8 @@
+{
+   "name": "TemplateMetro",
+   "requires": [],
+   "id": "a172ee5a-af4e-4ecc-827e-f2ad8cbc7b9d",
+   "resources": [
+      "app/resources/TemplateMetro.css"
+   ]
+}

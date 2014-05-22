@@ -1,0 +1,67 @@
+{
+    "name": "TemplateMetro",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "4.0.4.84",
+            "frameworkVersion": "4.2.1.883"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Auto Expand",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            }
+        },
+        "urlPrefix": "",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "3.0.4",
+    "xdsBuild": 1386,
+    "schemaVersion": 1,
+    "upgradeVersion": 300000000004,
+    "framework": "ext42",
+    "viewOrderMap": {
+        "view": [
+            "d40631d6-85a5-4f42-a661-58af4f9c0a52"
+        ],
+        "store": [
+            "6d7eda59-0afc-4f04-8cc9-7936067e531c",
+            "54d275a8-6c49-4307-8f09-4ed9c0eb0cce",
+            "d885e4ee-fe6e-4f77-95f7-0228b1dd55b4"
+        ],
+        "controller": [
+            "4fd4a19a-f343-43b0-83a6-1e3f2fc2249f",
+            "cf26efa6-bf45-45ae-8848-071010c10180"
+        ],
+        "model": [
+            "37a029a6-87fc-411f-88cc-f7d6f551389e",
+            "4d07e636-98cd-4862-8454-cecc03eb5655"
+        ],
+        "resource": [
+            "7fcf104d-c455-42c5-b1f9-1f0d2ba2b9ed",
+            "7db4b2eb-727a-4971-bcf2-c3a61d323424",
+            "8f79c84c-f9e4-4ab0-ac3c-ec38e744a45b",
+            "4730464a-3e5e-4b59-8214-b00599404aa8",
+            "46aeaa46-7952-481a-96fa-bce9591ee1c9",
+            "95bcbe60-4260-419e-a03a-bdccc76ef759",
+            "43f320f6-fd5f-48a0-b582-023ca06d80f0",
+            "8845db17-21bd-4c0c-88f2-4ad9315613b7",
+            "8b162f8a-6cec-4732-a19c-1ce4035896cf",
+            "f67d87d4-9403-4ecc-84f8-ba932e9dd4fa",
+            "26810931-31d0-43a2-9470-8a8284be0463",
+            "e8aae3b6-cfba-43e0-8acd-2234daabce60"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}
