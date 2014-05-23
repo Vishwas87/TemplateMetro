@@ -41,6 +41,7 @@ Ext.define('TemplateMetro.store.TemplateStr_AppPreferences', {
                 scope: this,
                 live: false
             },
+            autoLoad: true,
             model: 'TemplateMetro.model.TemplateMdl_AppPreference',
             storeId: 'TemplateStr_AppPreferences'
         }), cfg)]);

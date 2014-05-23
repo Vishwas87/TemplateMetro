@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "configuration": [
             "{",
             "    localDB: 'siacloud_apps_preferences',",

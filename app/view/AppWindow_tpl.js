@@ -206,8 +206,9 @@ Ext.define('TemplateMetro.view.AppWindow_tpl', {
                 containerScroll: true,
                 ddGroup: CloudCommon.getNamespaceFromClass(component.$className),
                 endDrag : function(e) {
-                    if (!component.dragData) { return true; }
+                    console.log("save");
                     controller.TemplateCnt_tpl_saveSidebarConfiguration();
+                    if (!component.dragData) { return true; }
                     component.fireEvent('itemdrop', component.dragData.info.origIdx,
                                         component.dragData.info.lastIdx, component.dragData.info.record);
                     return true;

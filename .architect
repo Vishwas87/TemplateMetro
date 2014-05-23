@@ -41,6 +41,7 @@
                             "cn": [
                                 {
                                     "id": "a7af5b4d-2851-4c7e-add3-660cc37d7bce",
+                                    "expanded": false,
                                     "cn": [
                                         {
                                             "id": "5e643884-d987-40c5-8a9c-5ef829e9d6f2"
@@ -58,6 +59,7 @@
         },
         "6d7eda59-0afc-4f04-8cc9-7936067e531c": {
             "id": "6d7eda59-0afc-4f04-8cc9-7936067e531c",
+            "expanded": false,
             "cn": [
                 {
                     "id": "25a8d0c3-c0fa-4fe6-a745-a5ad728c2ed6"
@@ -78,6 +80,7 @@
         },
         "d885e4ee-fe6e-4f77-95f7-0228b1dd55b4": {
             "id": "d885e4ee-fe6e-4f77-95f7-0228b1dd55b4",
+            "expanded": false,
             "cn": [
                 {
                     "id": "84c6392f-f67d-40c6-b402-e50c433af3a6"
