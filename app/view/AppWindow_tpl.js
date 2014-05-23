@@ -84,8 +84,6 @@ Ext.define('TemplateMetro.view.AppWindow_tpl', {
                         '',
                         {
                             getUnique: function(multirunning) {
-                                var timestamp = new Date().getTime();
-
                                 if(multirunning) return "_"+Ext.id();
                                 return "";
                             }

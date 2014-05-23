@@ -137,8 +137,6 @@
                                 ],
                                 "fn": "getUnique",
                                 "implHandler": [
-                                    "var timestamp = new Date().getTime();",
-                                    "",
                                     "if(multirunning) return \"_\"+Ext.id();",
                                     "return \"\";"
                                 ]
