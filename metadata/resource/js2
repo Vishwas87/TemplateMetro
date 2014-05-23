@@ -8,7 +8,7 @@
     "userConfig": {
         "designer|userClassName": "js2",
         "id": "CloudLibraryJS",
-        "url": "../cloudLibrary.js"
+        "url": "../../../libJS/TemplateMetro/cloudLibrary.js"
     },
     "designerId": "95bcbe60-4260-419e-a03a-bdccc76ef759"
 }

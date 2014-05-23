@@ -35,6 +35,92 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
 
     tplCnt_initialize: function(application) {
 
+        var appRef = CloudCommon.getAppRef(this.$className);
+        appRef = (appRef.app)?appRef.app:null;
+
+        var main_cnt = this.getMainCntController();
+
+        var runningWdgStoreRef = this.getTemplateStr_RunningWidgetStore();
+        var appListStoreRef = this.getTemplateStr_AppsStore();
+        var appPrefStoreRef = this.getTemplateStr_AppPreferencesStore();
+
+        var preloader = this.TemplateCnt_tpl_getPreloader();
+
+
+        var funLoadPrefs = function()
+        {
+            //1) Load App Preferences
+            var scope  = this;
+            var appName = appRef.name ;
+
+            //Generic Error Handler
+            var errorCB = function(err)
+            {
+                console.log(err);
+            };
+            //Success Handler
+            var prefLoaded = function(res)
+            {
+                //Prefs Founded --> Load sidebar
+                if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"PREF_LOADED"));
+
+                var rec = appPrefStoreRef.getAt(0);
+                var prefs = rec.get("preferences");
+                if(appRef && main_cnt && typeof main_cnt.onStart === "function") main_cnt.onStart(appRef);
+
+            };
+            //No Prefs found for app ---> let create it
+            var noPrefFound = function(err)
+            {
+                if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"NOPREF_FOUND"));
+
+                setTimeout(function(){
+                    appPrefStoreRef.pInsert({
+                        id:appName,
+                        app_id:appName,
+                        preferences:
+                        {
+                            sidebar:{}
+                        }
+                    },prefLoaded,errorCB,scope);
+
+                },600);
+
+            };
+
+            //Show Preloader info
+            if(preloader.isHidden()) preloader.show(); //Show Preloader
+            if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"PREF_LOADING"));
+            setTimeout(function(){
+                appPrefStoreRef.searchById(appName,prefLoaded,noPrefFound,scope);
+            },800);
+
+
+        };
+
+
+        if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"APPLIST_LOADING"));
+
+        var funLoadAppList = function()
+        {
+            appListStoreRef.load(function(){
+                if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"APPLIST_LOADED"));
+                funLoadPrefs();
+            });
+
+        };
+
+
+        funLoadAppList();
+
+
+
+
+
+
+
+
+
     },
 
     tplCnt_deInitialize: function(application) {
@@ -63,7 +149,7 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
 
 
 
-        var preloader = Ext.createByAlias("widget.metropreloader");
+        var preloader = this.TemplateCnt_tpl_getPreloader();
         preloader.show(); //Show Preloader
         preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"MSG_LOADING"));
 

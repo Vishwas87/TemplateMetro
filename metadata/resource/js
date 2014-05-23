@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "js",
-        "url": "../CloudCommon.js"
+        "url": "../../../libJS/TemplateMetro/CloudCommon.js"
     },
     "designerId": "8f79c84c-f9e4-4ab0-ac3c-ec38e744a45b"
 }

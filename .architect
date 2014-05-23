@@ -1,6 +1,6 @@
 {
     "expandedState": {
-        "data": false,
+        "data": true,
         "model": true,
         "component": true,
         "controller": true,
@@ -253,14 +253,14 @@
         ]
     },
     "canvasState": {
-        "topInstance": "f6d10b73-c923-4853-ac8e-7e3af510f690"
+        "topInstance": null
     },
     "inspectorState": {
-        "topInstance": "f095df5a-689f-408b-bedc-bcd375963faa",
-        "selectedInstance": "f095df5a-689f-408b-bedc-bcd375963faa"
+        "topInstance": "e8aae3b6-cfba-43e0-8acd-2234daabce60",
+        "selectedInstance": "e8aae3b6-cfba-43e0-8acd-2234daabce60"
     },
     "codeState": {
-        "topInstance": "f095df5a-689f-408b-bedc-bcd375963faa"
+        "topInstance": "e8aae3b6-cfba-43e0-8acd-2234daabce60"
     },
     "editMode": "code",
     "userSettings": {

@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "js9",
-        "url": "../Controller.js"
+        "url": "../../../libJS/TemplateMetro/Controller.js"
     },
     "designerId": "e8aae3b6-cfba-43e0-8acd-2234daabce60"
 }

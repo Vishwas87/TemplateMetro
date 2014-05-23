@@ -7,7 +7,7 @@
     "codeClass": null,
     "userConfig": {
         "designer|userClassName": "js8",
-        "url": "../Application.js"
+        "url": "../../../libJS/TemplateMetro/Application.js"
     },
     "designerId": "26810931-31d0-43a2-9470-8a8284be0463"
 }
