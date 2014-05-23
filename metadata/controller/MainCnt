@@ -6,7 +6,12 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "MainCnt"
+        "designer|userClassName": "MainCnt",
+        "mixins": [
+            "{",
+            "    mix: \"MetroMixin.controller.MainCnt\"",
+            "}"
+        ]
     },
     "designerId": "cf26efa6-bf45-45ae-8848-071010c10180",
     "cn": [
@@ -25,6 +30,14 @@
                 ],
                 "fn": "mainCnt_onInit",
                 "implHandler": [
+                    "",
+                    "var preloader = parameters.preloader; //Use preloader to comunicate change of status during initialization",
+                    "",
+                    "console.log(parameters);",
+                    "",
+                    "//Don't Forget to call",
+                    "if(typeof callback === \"function\") callback.call(scope,parameters);",
+                    "",
                     ""
                 ]
             },
@@ -39,10 +52,27 @@
             "codeClass": null,
             "userConfig": {
                 "designer|params": [
-                    "application"
+                    "parameters"
                 ],
                 "fn": "mainCnt_onStart",
                 "implHandler": [
+                    "",
+                    "console.log(parameters);",
+                    "",
+                    "var preloader = parameters.preloader;",
+                    "var prefs = parameters.preferences;",
+                    "",
+                    "/*Create the main view*/",
+                    "var win = this.MainCnt_getMainViewRef();",
+                    "win.prefs = prefs;",
+                    "",
+                    "prefs = null;",
+                    "parameters = null;",
+                    "",
+                    "preloader.dismiss(null,function(){",
+                    "    //Show main View after preloader has been hidden",
+                    "    win.show();",
+                    "},this);",
                     ""
                 ]
             },

@@ -86,7 +86,7 @@ Ext.define('TemplateMetro.view.AppWindow_tpl', {
                             getUnique: function(multirunning) {
                                 var timestamp = new Date().getTime();
 
-                                if(multirunning) return "_"+timestamp;
+                                if(multirunning) return "_"+Ext.id();
                                 return "";
                             }
                         }
@@ -178,7 +178,13 @@ Ext.define('TemplateMetro.view.AppWindow_tpl', {
                         }
                     ]
                 }
-            ]
+            ],
+            listeners: {
+                beforerender: {
+                    fn: me.onWindowBeforeRender,
+                    scope: me
+                }
+            }
         });
 
         me.callParent(arguments);
@@ -460,6 +466,30 @@ Ext.define('TemplateMetro.view.AppWindow_tpl', {
         }
 
 
+    },
+
+    onWindowBeforeRender: function(component, eOpts) {
+        console.log(component);
+
+        var sidebar = component.down("dataview[role=sidebar]");
+        console.log(sidebar);
+        var win = component;
+        sidebar.on("viewready",function(){
+
+            if(win.prefs)
+            {
+                var keys = Object.keys(win.prefs.sidebar);
+                var arr = [];
+                Ext.each(keys,function(r){
+                    //component.Tpl_Sidebar_vw_addNewTile(recs[r]);
+                    arr.push(win.prefs.sidebar[r]);
+                });
+                console.log(arr);
+                if(arr.length > 0)win.AppWindow_tpl_addNewTile(arr);
+
+            }
+
+        });
     }
 
 });

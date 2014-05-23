@@ -46,7 +46,7 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
 
         var preloader = this.TemplateCnt_tpl_getPreloader();
 
-
+        var me = this;
         var funLoadPrefs = function()
         {
             //1) Load App Preferences
@@ -62,18 +62,24 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
             var prefLoaded = function(res)
             {
                 //Prefs Founded --> Load sidebar
-                if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"PREF_LOADED"));
+                if(preloader && preloader.isVisible()) preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"PREF_LOADED"));
 
                 var rec = appPrefStoreRef.getAt(0);
                 var prefs = rec.get("preferences");
-                if(appRef && main_cnt && typeof main_cnt.onStart === "function") main_cnt.onStart(appRef);
+                var parameters =
+                    {
+                        preloader: me.TemplateCnt_tpl_getPreloader(),
+                        app: application,
+                        preferences: prefs
+                    };
+                if(appRef && main_cnt && typeof main_cnt.mainCnt_onStart === "function") main_cnt.mainCnt_onStart(parameters);
 
             };
             //No Prefs found for app ---> let create it
             var noPrefFound = function(err)
             {
-                if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"NOPREF_FOUND"));
-
+               if(preloader && preloader.isVisible()) preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"NOPREF_FOUND"));
+                //The timeout is just to show the preloader msg
                 setTimeout(function(){
                     appPrefStoreRef.pInsert({
                         id:appName,
@@ -87,10 +93,9 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
                 },600);
 
             };
-
             //Show Preloader info
             if(preloader.isHidden()) preloader.show(); //Show Preloader
-            if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"PREF_LOADING"));
+            if(preloader && preloader.isVisible()) preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"PREF_LOADING"));
             setTimeout(function(){
                 appPrefStoreRef.searchById(appName,prefLoaded,noPrefFound,scope);
             },800);
@@ -99,12 +104,12 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
         };
 
 
-        if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"APPLIST_LOADING"));
+        if(preloader && preloader.isVisible()) preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"APPLIST_LOADING"));
 
         var funLoadAppList = function()
         {
             appListStoreRef.load(function(){
-                if(preloader && preloader.isVisible()) preloader.updateText(getTranslationFor(appRef.name,"APPLIST_LOADED"));
+                if(preloader && preloader.isVisible()) preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"APPLIST_LOADED"));
                 funLoadPrefs();
             });
 
@@ -145,7 +150,7 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
 
         var appRef = CloudCommon.getAppRef(this.$className);
         appRef = (appRef.app)?appRef.app:null;
-        var main_cnt = this.getMainCntController();
+        var cnt = this.getMainCntController();
 
 
 
@@ -153,9 +158,15 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
         preloader.show(); //Show Preloader
         preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"MSG_LOADING"));
 
-        if(appRef && main_cnt)
+        if(appRef && cnt)
         {
-            if(typeof main_cnt.onInit === "function") main_cnt.onInit(this.tplCnt_initialize,appRef,this);
+            var params =
+                {
+                    preloader: preloader,
+                    app: appRef
+                };
+
+            if(typeof cnt.mainCnt_onInit === "function") cnt.mainCnt_onInit(this.tplCnt_initialize,params,this);
             else this.tplCnt_initialize(appRef);
         }
     }

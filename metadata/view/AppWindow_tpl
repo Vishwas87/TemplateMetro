@@ -139,7 +139,7 @@
                                 "implHandler": [
                                     "var timestamp = new Date().getTime();",
                                     "",
-                                    "if(multirunning) return \"_\"+timestamp;",
+                                    "if(multirunning) return \"_\"+Ext.id();",
                                     "return \"\";"
                                 ]
                             },
@@ -640,6 +640,43 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeRender",
+                "implHandler": [
+                    "console.log(component);",
+                    "",
+                    "var sidebar = component.down(\"dataview[role=sidebar]\");",
+                    "console.log(sidebar);",
+                    "var win = component;",
+                    "sidebar.on(\"viewready\",function(){",
+                    "",
+                    "    if(win.prefs)",
+                    "    {",
+                    "        var keys = Object.keys(win.prefs.sidebar);",
+                    "        var arr = [];",
+                    "        Ext.each(keys,function(r){",
+                    "            //component.Tpl_Sidebar_vw_addNewTile(recs[r]);",
+                    "            arr.push(win.prefs.sidebar[r]);",
+                    "        });",
+                    "        console.log(arr);",
+                    "        if(arr.length > 0)win.AppWindow_tpl_addNewTile(arr);",
+                    "",
+                    "    }",
+                    "",
+                    "});"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "b7b3f43b-933e-4c2f-a981-51e1f08daf1b"
         }
     ]
 }

@@ -16,11 +16,40 @@
 Ext.define('TemplateMetro.controller.MainCnt', {
     extend: 'Ext.app.Controller',
 
+    mixins: {
+        mix: 'MetroMixin.controller.MainCnt'
+    },
+
     mainCnt_onInit: function(callback, parameters, scope) {
+
+        var preloader = parameters.preloader; //Use preloader to comunicate change of status during initialization
+
+        console.log(parameters);
+
+        //Don't Forget to call
+        if(typeof callback === "function") callback.call(scope,parameters);
+
 
     },
 
-    mainCnt_onStart: function(application) {
+    mainCnt_onStart: function(parameters) {
+
+        console.log(parameters);
+
+        var preloader = parameters.preloader;
+        var prefs = parameters.preferences;
+
+        /*Create the main view*/
+        var win = this.MainCnt_getMainViewRef();
+        win.prefs = prefs;
+
+        prefs = null;
+        parameters = null;
+
+        preloader.dismiss(null,function(){
+            //Show main View after preloader has been hidden
+            win.show();
+        },this);
 
     },
 
