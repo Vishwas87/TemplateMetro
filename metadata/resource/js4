@@ -1,0 +1,13 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "js4",
+        "url": "../ita.js"
+    },
+    "designerId": "f095df5a-689f-408b-bedc-bcd375963faa"
+}

@@ -20,6 +20,9 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
         mix: 'MetroMixin.controller.TemplateCnt_tpl'
     },
 
+    controllers: [
+        'MainCnt'
+    ],
     models: [
         'TemplateMdl_App',
         'TemplateMdl_AppPreference'
@@ -52,7 +55,23 @@ Ext.define('TemplateMetro.controller.TemplateCnt_tpl', {
 
     onLaunch: function() {
 
-        Ext.create('TemplateMetro.view.AppWindow_tpl', {renderTo: Ext.getBody()}).show();
+        //Ext.create('TemplateMetro.view.AppWindow_tpl', {renderTo: Ext.getBody()}).show();
+
+        var appRef = CloudCommon.getAppRef(this.$className);
+        appRef = (appRef.app)?appRef.app:null;
+        var main_cnt = this.getMainCntController();
+
+
+
+        var preloader = Ext.createByAlias("widget.metropreloader");
+        preloader.show(); //Show Preloader
+        preloader.updateText(CloudCommon.getTranslationFor(appRef.name,"MSG_LOADING"));
+
+        if(appRef && main_cnt)
+        {
+            if(typeof main_cnt.onInit === "function") main_cnt.onInit(this.tplCnt_initialize,appRef,this);
+            else this.tplCnt_initialize(appRef);
+        }
     }
 
 });

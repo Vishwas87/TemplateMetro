@@ -21,7 +21,8 @@ Ext.Loader.setConfig({
 
 Ext.application({
     views: [
-        'AppWindow_tpl'
+        'AppWindow_tpl',
+        'W8Preloader'
     ],
     controllers: [
         'TemplateCnt_tpl',

@@ -6,6 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
+        "controllers": [
+            "[",
+            "    ",
+            "    \"MainCnt\"",
+            "    ",
+            "]"
+        ],
         "designer|userClassName": "TemplateCnt_tpl",
         "mixins": [
             "{",
@@ -23,7 +30,17 @@
             "TemplateStr_AppPreferences"
         ]
     },
+    "configAlternates": {
+        "controllers": "array"
+    },
     "designerId": "4fd4a19a-f343-43b0-83a6-1e3f2fc2249f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "controllers",
+            "type": "string"
+        }
+    ],
     "cn": [
         {
             "type": "basicfunction",
@@ -36,7 +53,10 @@
                 "designer|params": [
                     "application"
                 ],
-                "fn": "tplCnt_initialize"
+                "fn": "tplCnt_initialize",
+                "implHandler": [
+                    ""
+                ]
             },
             "designerId": "8d4afbbc-bdb9-494c-8fb5-114acb61450d"
         },
@@ -102,7 +122,23 @@
                 "fn": "onLaunch",
                 "implHandler": [
                     "",
-                    "Ext.create('TemplateMetro.view.AppWindow_tpl', {renderTo: Ext.getBody()}).show();"
+                    "//Ext.create('TemplateMetro.view.AppWindow_tpl', {renderTo: Ext.getBody()}).show();",
+                    "",
+                    "var appRef = CloudCommon.getAppRef(this.$className);",
+                    "appRef = (appRef.app)?appRef.app:null;",
+                    "var main_cnt = this.getMainCntController();",
+                    "",
+                    "",
+                    "",
+                    "var preloader = Ext.createByAlias(\"widget.metropreloader\");",
+                    "preloader.show(); //Show Preloader",
+                    "preloader.updateText(CloudCommon.getTranslationFor(appRef.name,\"MSG_LOADING\"));",
+                    "",
+                    "if(appRef && main_cnt)",
+                    "{",
+                    "    if(typeof main_cnt.onInit === \"function\") main_cnt.onInit(this.tplCnt_initialize,appRef,this);",
+                    "    else this.tplCnt_initialize(appRef);",
+                    "}"
                 ]
             },
             "designerId": "4b20a55e-7db9-40ee-a167-0920eb701201"

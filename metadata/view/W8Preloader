@@ -1,0 +1,64 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "center",
+        "container|pack": "center",
+        "designer|userAlias": "metropreloader",
+        "designer|userClassName": "W8Preloader",
+        "height": 250,
+        "layout": "vbox",
+        "mixins": [
+            "{",
+            "    ",
+            "    preloader: \"CloudCommonComponent.view.MetroPreloader\"",
+            "}"
+        ],
+        "requires": [
+            "CloudCommonComponent.view.MetroPreloader"
+        ],
+        "title": "My Window",
+        "width": 400
+    },
+    "designerId": "f6d10b73-c923-4853-ac8e-7e3af510f690",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeRender",
+                "implHandler": [
+                    "component.beforeRenderEvent();"
+                ],
+                "name": "beforerender",
+                "scope": "me"
+            },
+            "designerId": "2e6e7055-3bdd-411e-a456-a8128d4bdc21"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowRender",
+                "implHandler": [
+                    " component.renderEvent();"
+                ],
+                "name": "render",
+                "scope": "me"
+            },
+            "designerId": "c2413c0d-e68c-4eaa-8fc3-6e680fffc7e1"
+        }
+    ]
+}

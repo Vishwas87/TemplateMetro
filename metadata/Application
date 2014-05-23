@@ -12,7 +12,8 @@
         ],
         "name": "TemplateMetro",
         "views": [
-            "AppWindow_tpl"
+            "AppWindow_tpl",
+            "W8Preloader"
         ]
     },
     "designerId": "application"
